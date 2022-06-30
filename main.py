@@ -13,7 +13,7 @@ tl = client.Transloadit(AUTH_KEY, AUTH_SECRET)
 qualities = {20, 50, 100}
 priorities = {'conversion-speed', 'compression-ratio'}
 booleans = {True, False}
-images = {'test1.jpg', 'test2.jpg', 'test3.png'}
+images = {'test1.jpg', 'test2.jpg', 'test3.png', 'test4.jpg'}
 
 # Write columns of CSV
 with open('data.csv', mode='w') as columns:
@@ -36,10 +36,10 @@ def write_to_csv(image, quality, priority, is_preserving_meta_data, assembly_res
                               output_format, priority, is_preserving_meta_data, quality])
 
 count = 0
-for quality in qualities:
-    for priority in priorities:
-        for is_preserving_meta_data in booleans:
-            for image in images:
+for image in images:
+    for quality in qualities:
+        for priority in priorities:
+            for is_preserving_meta_data in booleans:
                 assembly = tl.new_assembly()
 
                 # Set Encoding Instructions
@@ -52,6 +52,7 @@ for quality in qualities:
                 # Set Encoding Instructions
                 assembly.add_step('format', '/image/resize', {
                     'use': 'optimize',
+                    'format': 'jpg',
                     'quality': quality
                 })
 
