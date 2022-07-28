@@ -15,8 +15,8 @@ booleans = {True, False}
 images = {
     'test1.jpg', 
     'test2.jpg', 
-    # 'test3.png', 
-    # 'test4.png', 
+    'test3.png', 
+    'test4.png', 
     'test5.jpg',
     'test6.jpg',
     'test7.jpg',
