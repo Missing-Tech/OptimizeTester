@@ -25,8 +25,10 @@ images = {
     'test10.jpg',
 }
 
+FILENAME = 'no-quality.csv'
+
 # Write columns of CSV
-with open('no-quality.csv', mode='w') as columns:
+with open(FILENAME, mode='w') as columns:
     column_writer = csv.writer(
         columns, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
     column_writer.writerow(['Image', 'Input Size (MB)', 'Output Size (MB)', 'Execution Time (s)',
@@ -41,7 +43,7 @@ def write_to_csv(image, priority, is_preserving_meta_data, assembly_response):
     input_format = image[-3:]
     output_format = assembly_response.data['results']['optimize'][0]['ext']
 
-    with open('no-quality.csv', mode='a') as data:
+    with open(FILENAME, mode='a') as data:
         data_writer = csv.writer(
             data, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
         data_writer.writerow([image, input_size, output_size, execution_time, input_format,

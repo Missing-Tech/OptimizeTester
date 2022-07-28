@@ -15,8 +15,10 @@ priorities = {'conversion-speed', 'compression-ratio'}
 booleans = {True, False}
 images = {'test1.jpg', 'test2.jpg', 'test3.png', 'test4.jpg'}
 
+FILENAME = 'data.csv'
+
 # Write columns of CSV
-with open('data.csv', mode='w') as columns:
+with open(FILENAME, mode='w') as columns:
     column_writer = csv.writer(columns, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
     column_writer.writerow(['Image', 'Input Size (MB)', 'Output Size (MB)', 'Execution Time (s)',
                             'Input Format', 'Output Format', 'Priority', 'Preserve Meta Data?', 'Quality'])
@@ -30,7 +32,7 @@ def write_to_csv(image, quality, priority, is_preserving_meta_data, assembly_res
     input_format = image[-3:]
     output_format = assembly_response.data['results']['format'][0]['ext']
 
-    with open('data.csv', mode='a') as data:
+    with open(FILENAME, mode='a') as data:
         data_writer = csv.writer(data, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
         data_writer.writerow([image, input_size, output_size, execution_time, input_format,
                               output_format, priority, is_preserving_meta_data, quality])
