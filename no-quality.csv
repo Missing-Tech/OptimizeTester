@@ -1,0 +1,17 @@
+Image,Input Size (MB),Output Size (MB),Execution Time (s),Input Format,Output Format,Priority,Preserve Meta Data?
+test2.jpg,1.154585,1.154585,1.205,jpg,jpg,conversion-speed,False
+test2.jpg,1.154585,1.154585,1.16,jpg,jpg,conversion-speed,True
+test2.jpg,1.154585,1.151439,1.94,jpg,jpg,compression-ratio,False
+test2.jpg,1.154585,0.743561,2.324,jpg,jpg,compression-ratio,True
+test4.png,10.232963,4.9686,23.892,png,png,conversion-speed,False
+test4.png,10.232963,10.232963,23.329,png,png,conversion-speed,True
+test4.png,10.232963,4.9686,27.502,png,png,compression-ratio,False
+test4.png,10.232963,10.232963,23.803,png,png,compression-ratio,True
+test3.png,4.658415,4.658415,2.691,png,jpg,conversion-speed,False
+test3.png,4.658415,4.658415,2.508,png,jpg,conversion-speed,True
+test3.png,4.658415,4.6496,5.462,png,jpg,compression-ratio,False
+test3.png,4.658415,3.071785,5.772,png,jpg,compression-ratio,True
+test1.jpg,4.24843,4.24843,3.536,jpg,jpg,conversion-speed,False
+test1.jpg,4.24843,4.24843,5.138,jpg,jpg,conversion-speed,True
+test1.jpg,4.24843,4.243004,6.713,jpg,jpg,compression-ratio,False
+test1.jpg,4.24843,2.482148,7.97,jpg,jpg,compression-ratio,True
