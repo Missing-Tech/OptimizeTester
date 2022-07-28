@@ -12,7 +12,18 @@ tl = client.Transloadit(AUTH_KEY, AUTH_SECRET)
 
 priorities = {'conversion-speed', 'compression-ratio'}
 booleans = {True, False}
-images = {'test1.jpg', 'test2.jpg', 'test3.png', 'test4.png'}
+images = {
+    'test1.jpg', 
+    'test2.jpg', 
+    # 'test3.png', 
+    # 'test4.png', 
+    'test5.jpg',
+    'test6.jpg',
+    'test7.jpg',
+    'test8.jpg',
+    'test9.jpg',
+    'test10.jpg',
+}
 
 # Write columns of CSV
 with open('no-quality.csv', mode='w') as columns:
