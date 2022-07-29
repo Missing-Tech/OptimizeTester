@@ -1,6 +1,7 @@
 # pip install pytransloadit
 # pip install python-decouple
 from fileinput import filename
+import pathlib
 from transloadit import client
 from decouple import config
 import csv
@@ -13,18 +14,19 @@ tl = client.Transloadit(AUTH_KEY, AUTH_SECRET)
 
 qualities = {25, 50, 75, 100}
 images = {
-    'test1.jpg',
-    'test2.jpg',
-    'test3.png',
-    'test4.png',
+    'test0.webp', 
+    'test1.jpg', 
+    'test2.jpg', 
+    'test3.png', 
+    'test4.png', 
     'test5.jpg',
     'test6.jpg',
-    'test7.jpg',
-    'test8.jpg',
-    'test9.jpg',
-    'test10.jpg',
+    'test7.gif',
+    'test8.svg',
+    'test9.gif',
+    'test10.webp',
+    'test10.svg',
 }
-
 FILENAME = 'quality.csv'
 
 # Write columns of CSV
@@ -40,7 +42,7 @@ def write_to_csv(image, quality, assembly_response):
     input_size = assembly_response.data['uploads'][0]['size'] / 1000000
     output_size = assembly_response.data['results']['format'][0]['size'] / 1000000
     execution_time = assembly_response.data['execution_duration']
-    input_format = image[-3:]
+    input_format = pathlib.Path(image).suffix
     output_format = assembly_response.data['results']['format'][0]['ext']
 
     with open(FILENAME, mode='a') as data:
