@@ -25,7 +25,7 @@ images = {
     'test8.svg',
     'test9.gif',
     'test10.webp',
-    'test10.svg',
+    'test11.svg',
 }
 
 FILENAME = 'no-quality.csv'
